@@ -81,7 +81,7 @@ input[type=submit]:hover{
   
 }
 #icon{
-  background-color:#F4F4F4;
+  background-color:rgba(13, 66, 102, 0.445);
   color:#625864;
   display:inline-block;
   font-size:14px;
