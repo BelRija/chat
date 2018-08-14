@@ -40,6 +40,11 @@ app.get('/', function(req, res){
 });
  
 //--------POST login
+
+app.post('/login',function(req,res){
+  res.sendFile(__dirname + '/public/chat.html');
+});
+
 app.post('/chatroom', function(req, res) {
   //the name from login field
   var username = req.body.username;  
