@@ -207,6 +207,84 @@ function deleteUser(username){
     }
 }
 
+
+
+
+/*
+	return toneRequest
+*/
+function createToneRequest (request) {
+	let toneChatRequest;
+
+  if (request.texts) {
+	 toneChatRequest = {utterances: []};
+
+	 for (let i in request.texts) {
+	  let utterance = {text: request.texts[i]};
+	   toneChatRequest.utterances.push(utterance);
+	 }
+  }
+
+  return toneChatRequest;
+}
+
+/*
+	return state of happyness
+*/
+function happyOrUnhappy (response) {
+  const happyTones = ['satisfied', 'excited', 'polite', 'sympathetic'];
+  const unhappyTones = ['sad', 'frustrated', 'impolite'];
+
+  let happyValue = 0;
+  let unhappyValue = 0;
+
+  for (let i in response.utterances_tone) {
+    let utteranceTones = response.utterances_tone[i].tones;
+    for (let j in utteranceTones) {
+      if (happyTones.includes(utteranceTones[j].tone_id)) {
+        happyValue = happyValue + utteranceTones[j].score;
+      }
+      if (unhappyTones.includes(utteranceTones[j].tone_id)) {
+        unhappyValue = unhappyValue + utteranceTones[j].score;
+      }
+    }
+  }
+
+  if (happyValue >= unhappyValue) {
+    return 'happy';
+  }else {
+    return 'unhappy';
+  }
+}
+
+/*
+Tone API IBM
+*/
+app.post('/tone', (req, res, next) => {
+	
+  let toneRequest = createToneRequest(req.body);
+  console.log("request  "+ toneRequest);
+
+  if (toneRequest) {console.log("toneRequest: "+ toneRequest);
+
+    toneAnalyzer.tone_chat(toneRequest, (err, response) => {
+      if (err) {
+        return next(err);
+      }
+      let answer = {mood: happyOrUnhappy(response)};
+
+      return res.json(answer);
+	});
+	
+  } else {
+    return res.status(400).send({error: 'Invalid Input'});
+  }
+
+});
+
+
+
+
 // --- Start the server ---
 http.listen(port, function(){
   console.log('listening on *:'+ port);
