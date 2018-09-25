@@ -133,7 +133,7 @@ $(function () {
 //Send message with the file via post message
     function sendFilePost(data){
         const promise = $.ajax({
-          url: 'http://localhost:3000/file',
+          url: 'https://mychatcc.eu-de.mybluemix.net/file',
           type: "POST",
           data: data,
           processData: false,
