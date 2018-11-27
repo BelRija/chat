@@ -85,7 +85,7 @@ io.on('connection', function(socket){
 
 //-------- Chat-Message --------
     socket.on('chat message', function(msg){  
-      msg=msg+happyOrUnhappy(msg);
+    //  msg=msg+happyOrUnhappy(msg);
 
       //send the message to all users
       io.emit('chat message', msg);     
