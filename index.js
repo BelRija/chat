@@ -32,8 +32,8 @@ var ToneAnalyzerV3  = require('watson-developer-cloud/tone-analyzer/v3');
 
 var toneAnalyzer = new ToneAnalyzerV3({
   version: '2016-05-19',
-  username: 'ccda81cd-32c1-4452-9009-addf255525bc',
-  password: 'PAd3qJNYhfbr',
+  username: 'ffdcfd03-6f04-4555-adaf-1692e3f1d9d5',
+  password: 'NKXSfZOZzzmK',
   url: 'https://gateway-fra.watsonplatform.net/tone-analyzer/api'
 });
 
