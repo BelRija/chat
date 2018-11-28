@@ -153,11 +153,11 @@ body {
 
 #from{
     font-size: small;
-    float: right;
 }
 
 #mood{
     color:#490123;
+    float: right;
 }
 
 #newUser{
