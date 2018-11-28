@@ -1,4 +1,4 @@
- applications:
- - name: mychatcc
-   memory: 128M
-   host: mychatcc
+applications:
+- name: mychatcc
+  memory: 512M
+  instances: 1
