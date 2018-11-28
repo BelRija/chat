@@ -272,9 +272,10 @@ app.post('/tone', (req, res, next) => {
       if (err) {
         return next(err);
       }
-      let answer = {mood: happyOrUnhappy(response)};
+      let msg = {mood: happyOrUnhappy(response)};
 
-      return res.json(answer);
+      //return res.json(msg);
+     return io.emit('chat message', msg);  
 	});
 	
   } else {
