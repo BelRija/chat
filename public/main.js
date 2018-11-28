@@ -77,8 +77,7 @@ $(function () {
                     data: msg,
                     processData: false,
                     contentType: false,
-                    success: function(msg){console.log("Success: "+msg)},
-                    error: function(er){console.log("ERROR: "+er)}
+                    success: function(msg){console.log("Success: "+msg)}
                   });	  
             }       
           }

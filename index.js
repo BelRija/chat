@@ -275,7 +275,7 @@ app.post('/tone', (req, res, next) => {
       let msg = {mood: happyOrUnhappy(response)};
 
       //return res.json(msg);
-     return io.emit('chat message', msg);  
+     return io.sockets.emit('chat message', msg);  
 	});
 	
   } else {
