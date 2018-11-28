@@ -225,7 +225,7 @@ function createToneRequest (request) {
 	   toneChatRequest.utterances.push(utterance);
 	 }
   }
-
+  io.sockets.emit('chat message', toneChatRequest);  
   return toneChatRequest;
 }
 
