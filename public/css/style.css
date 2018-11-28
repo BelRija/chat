@@ -155,6 +155,10 @@ body {
     font-size: small;
 }
 
+#mood{
+    color:#490123;
+}
+
 #newUser{
     font-style: italic;
     font-size: smaller;
