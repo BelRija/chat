@@ -28,6 +28,15 @@ app.use(function(req, res, next) {
   next();
 });
 
+var ToneAnalyzerV3  = require('watson-developer-cloud/tone-analyzer/v3');
+
+var toneAnalyzer = new ToneAnalyzerV3({
+  version: '2016-05-19',
+  username: 'ccda81cd-32c1-4452-9009-addf255525bc',
+  password: 'PAd3qJNYhfbr',
+  url: 'https://gateway-fra.watsonplatform.net/tone-analyzer/api'
+});
+
 //-------- Get the path to the `public` folder.
 //-------- __dirname is the folder that `index.js` is in.
 var publicPath = path.resolve(__dirname, 'public');
@@ -263,25 +272,48 @@ function happyOrUnhappy (response) {
 Tone API IBM
 */
 app.post('/tone', (req, res, next) => {
-	
-  let toneRequest = createToneRequest(req.body);
-  console.log("request  "+ toneRequest);
+  console.log("tone: ",req.body.message );
+
+  var utterances = [
+    {
+      text: req.body.message,
+      user: req.body.uname
+    }];
+
+  var toneChatParams = {
+    utterances: utterances
+  };
+
+  toneAnalyzer.toneChat(toneChatParams, function (error, utteranceAnalyses) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("TONE: ",JSON.stringify(utteranceAnalyses, null, 2));
+      let mood = {mood: happyOrUnhappy(utteranceAnalyses)};
+      console.log("requestMSG:  "+ mood.mood);
+      var msg = { "uname":req.body.uname, "message":req.body.message, "mood":mood.mood};
+      io.sockets.emit('chat message', msg); 
+    }
+  });
+   
+  /*  let toneRequest = createToneRequest(req.body.message);
 
   if (toneRequest) {console.log("toneRequest: "+ toneRequest);
-
-    toneAnalyzer.tone_chat(toneRequest, (err, response) => {
+ */
+    /* toneAnalyzer.tone_chat(toneRequest, (err, response) => {
       if (err) {
         return next(err);
       }
       let msg = {mood: happyOrUnhappy(response)};
-
-      //return res.json(msg);
-     return io.sockets.emit('chat message', msg);  
-	});
+      console.log("requestMSG:  "+ msg);
+      return res.json(msg);
+     //return io.sockets.emit('chat message', msg);  
+  } */
+  //);
 	
-  } else {
+/*   } else {
     return res.status(400).send({error: 'Invalid Input'});
-  }
+  } */
 
 });
 

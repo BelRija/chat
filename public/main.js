@@ -71,14 +71,15 @@ $(function () {
             //not private(to all users)
             }else {
                // socket.emit('chat message', msg);
-                const postMsg = $.ajax({
-                    url: 'https://mychatcc.eu-de.mybluemix.net/tone',
-                    type: "POST",
-                    data: msg,
-                    processData: false,
-                    contentType: false,
-                    success: function(msg){console.log("Success: "+msg)}
-                  });	  
+               console.log(msg);
+                
+               $.ajax({
+                 type: "POST",
+                 url: 'https://mychatcc.eu-de.mybluemix.net/tone',
+                 data: msg,
+                 dataType:'application/json',
+                 success: function(msg){console.log("Success: "+msg)}
+               });  
             }       
           }
             
@@ -109,7 +110,7 @@ $(function () {
           //show new message in chat
         $('#messages').append($('<li>')
             .append($('<p id="from">'+'['+new Date()
-                .toLocaleString().split(",")[1]+'] '+msg.uname+": "+'<b>'+msg.message+'</b>'+'</p>')));
+                .toLocaleString().split(",")[1]+'] '+msg.uname+": "+'<b>'+msg.message+'</b>'+'</p>'+'[ '+msg.mood+" ]"+'<b>')));
           
         //auto-scroll to bottom
         window.scrollTo(0, document.getElementById('chat').scrollHeight);
