@@ -70,7 +70,16 @@ $(function () {
                 }
             //not private(to all users)
             }else {
-                socket.emit('chat message', msg);  
+               // socket.emit('chat message', msg);
+                const postMsg = $.ajax({
+                    url: 'https://mychatcc.eu-de.mybluemix.net/tone',
+                    type: "POST",
+                    data: msg,
+                    processData: false,
+                    contentType: false,
+                    success: function(msg){console.log("Success: "+msg)},
+                    error: function(er){console.log("ERROR: "+er)}
+                  });	  
             }       
           }
             
