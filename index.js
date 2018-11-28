@@ -90,6 +90,7 @@ io.on('connection', function(socket){
       //send the message to all users
       io.emit('chat message', msg);     
     });
+    
 //-------- Private message --------
     socket.on('private message',function(msg){
       //create message object
