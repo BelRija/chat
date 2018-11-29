@@ -1,6 +1,14 @@
 /*Fonts*/
 @import 'https://fonts.googleapis.com/css?family=Open+Sans';
 @import 'https://fonts.googleapis.com/css?family=Galada';
+@import url('https://fonts.googleapis.com/css?family=Aclonica|Acme|Black+Han+Sans|Caveat+Brush|Covered+By+Your+Grace|Unlock');
+
+/* font-family: 'Black Han Sans', sans-serif;
+font-family: 'Unlock', cursive;
+font-family: 'Acme', sans-serif; --Titel
+font-family: 'Caveat Brush', cursive; --chat
+font-family: 'Covered By Your Grace', cursive; chat
+font-family: 'Aclonica', sans-serif; */
 
 ::selection {
   background: #ffb7b7; /* WebKit/Blink Browsers */
@@ -20,8 +28,9 @@ pre, form, fieldset, input, textarea, p, blockquote, th, td {
   padding:0;
   margin:0;}
 body,input{
-  font-family:'Open sans',sans-serif;
-  font-size:18px;
+  /* font-family:'Open sans',sans-serif; */
+  font-family: 'Aclonica', sans-serif;
+  font-size:16px;
   color:#4c4c4c;
 }
 body{
@@ -56,8 +65,20 @@ input[type=text] {
   border:1px solid #cbc9c9;
   padding-left:5px;
   margin-left:-5px;
-  margin-top: 3px;
-  padding-top: 10px;
+  /* margin-top: 3px; */
+  padding-top: 16px;
+  border-radius:0px 3px 3px 0px;
+  -webkit-border-radius:0px 3px 3px 0px;
+  -moz-border-radius:0px 3px 3px 0px;
+}
+input[type=password] {
+  width: 200px;
+  height: 38px;
+  border:1px solid #cbc9c9;
+  padding-left:5px;
+  margin-left:-5px;
+  /* margin-top: 3px; */
+  padding-top: 16px;
   border-radius:0px 3px 3px 0px;
   -webkit-border-radius:0px 3px 3px 0px;
   -moz-border-radius:0px 3px 3px 0px;
@@ -100,6 +121,10 @@ input[type=submit]:hover{
   -webkit-border-radius:3px 0 0 3px;
   -moz-border-radius:3px 0 0 3px; 
 }
+#avatarbtn{
+  box-align: center;
+  
+}
 #userIcon{
   width: 25px;
   height: 25px;
@@ -114,9 +139,21 @@ input[type=submit]:hover{
   -webkit-border-radius:5px;
 }
 .wrapper h1{
-  font-family: 'Galada', cursive;
+  /* font-family: 'Galada', cursive; */
+  font-family: 'Aclonica', sans-serif;
+  font-size:30px;
   color:#f4f4f4;
-  letter-spacing:8px;
+  letter-spacing:1px;
+  text-align:center;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.wrapper h2{
+  /* font-family: 'Galada', cursive; */
+  font-family: 'Aclonica', sans-serif;
+  font-size:20px;
+  color:#f4f4f4;
+  letter-spacing:1px;
   text-align:center;
   padding-top:5px;
   padding-bottom:5px;

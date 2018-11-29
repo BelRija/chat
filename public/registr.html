@@ -8,14 +8,23 @@
 
   <body>
     <div class="wrapper animated bounce">
-     <h1>Login<a href="registr.html"><h2>Registration</h2></a></h1>
+      <h1>Registration<a href="login.html"><h2>Login</h2></a></h1>
       <hr>
-      <form action="/chatroom" method="post">  
+      <form action="/registr" method="post">     
+         <p>
+           <!-- <button id="avatarbtn">  -->
+           <input type="image" src="img/avatarn.png"  placeholder="avatar" id="avatar" name="avatar" >
+          <!-- </button> -->
+        </p>
         <label id="icon" for="username">
           <img src="img/usern.png" alt="user" id="userIcon" >
         </label>
         <input type="text" placeholder="Username" id="username" name="username" minlength="2" required>
-        <input type="submit" value="Sign In" > 
+        <label id="icon" for="username">
+          <img src="img/password.png" alt="password" id="userIcon" >
+        </label>
+        <input type="password" placeholder="Password" id="password" name="password" minlength="6" required>
+        <input type="submit" value="Sign up" > 
         <hr>
       </form>
     </div>

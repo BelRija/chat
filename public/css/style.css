@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Aclonica|Acme|Black+Han+Sans|Caveat+Brush|Covered+By+Your+Grace|Unlock');
+
+/* font-family: 'Black Han Sans', sans-serif;
+font-family: 'Unlock', cursive;
+font-family: 'Acme', sans-serif; --Titel
+font-family: 'Caveat Brush', cursive; --chat
+font-family: 'Aclonica', sans-serif; */
+
 * { 
     margin: 0; padding: 0; box-sizing: border-box; 
-    /* font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;  */
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    /* background: rgb(2, 70, 95); */
 }
 #chat{
     margin-bottom: 50px; 
@@ -13,19 +18,29 @@
 }
 #head{
     padding: 15px;
-    background-color: #092c4d;
+    background-color: #96ccff;
     /* background-color: #023B66; */
-    color: rgb(221, 215, 250);
+    color: rgb(255, 255, 255);
 }
 #header{
     float: left;
     width: 82%;
     height: 65px;
-    background-color: #00376b;
-    /* background-color: #023B66; */
-    color: rgb(221, 215, 250);
+    background-color: #a6d7ff;
+
+    /* background-color: #a6d7ff;  */
+    color: rgb(255, 255, 255);
     text-align: left;
 
+}
+
+#mood{
+    color: green;
+    float: right;
+}
+#smiley{
+    width: 20px;
+    height: 20px;
 }
 #to_login{
     /* text-align: center; */
@@ -49,27 +64,30 @@ a video{
     max-height: 200px;
 }
 .list{
+    font-family: 'Aclonica', sans-serif;   
     width: 18%; 
     min-height: 100%;
     position: fixed;
-    background-color: #5583c04d;
+    background-color: #bfdaff4d;
     text-align: center;
     font-size: 25px;
     right: 0;
     border-color:  rgba(0, 53, 151, 0.767);
     /* border-left: 6px solid rgba(35, 35, 99, 0.767); */
     box-shadow:  0 0 2px rgba(0, 0, 0, 0.2);
-    color: rgba(20, 36, 61, 0.897);
+    color: rgb(124, 191, 240);
     -webkit-box-shadow: -8px 1px 7px -5px rgba(44, 52, 71, 0.486);
     /* -moz-box-shadow: -8px 1px 14px -5px rgba(44, 55, 71, 0.486);
     box-shadow: -8px 1px 14px -5px rgba(84, 117, 209, 0.486); */
 }
 #users{
     list-style-type: none;
+    font-family: 'Aclonica', sans-serif;   
 }
 body { 
     /* font: 18px Helvetica, Arial;    */
-    font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif; 
+    /* font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;  */
+    font-family: 'Acme', sans-serif;
     font-size: 18px;
     /* background-image: url("/img/background_4.jpg"); */
     background-attachment:fixed;  
@@ -90,8 +108,10 @@ body {
     position: fixed; 
     bottom: 0; 
     width: 82%; 
+    font-family: 'Acme', sans-serif;
 }
 #inputField { 
+    font-family: 'Acme', sans-serif;
     border: 0; 
     /* padding: 10px; */
     width: 90%; 
@@ -105,8 +125,7 @@ body {
     height: inherit;
     padding: 10px; 
     color: aliceblue; 
-    font: 18px Helvetica, Arial; 
-    /* border-radius: 4px; */
+    font-family: 'Caveat Brush';
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     background: #416594;
     /* background-color: rgb(1, 54, 83); */
@@ -121,7 +140,9 @@ body {
     list-style-type: none; margin: 0; padding: 0; 
 }
 #messages li { 
+    font-family: 'Acme', sans-serif;
     padding: 5px 10px; 
+    font-size:16px;
     /* width: 90%; */
     margin-left:5%;
     box-shadow: 10px 10px 3px -2px rgba(46, 45, 45, 0.2);
@@ -133,7 +154,9 @@ body {
 
 /* ungerade zeilen */
 #messages li:nth-child(odd) { 
-    background: rgba(32, 97, 219, 0.514); 
+    font-size:16px;
+    font-family: 'Acme', sans-serif;
+    background: rgba(0, 131, 226, 0.514); 
     color: rgb(255, 255, 255);
     width: 95%;
     margin-left:5%;
@@ -152,20 +175,19 @@ body {
 }
 
 #from{
-    font-size: small;
-}
-
-#mood{
-    color:#490123;
-    float: right;
+    /* font-size: small; */
 }
 
 #newUser{
     font-style: italic;
     font-size: smaller;
+
 }
 #users li{
-    font-family: "Comic Sans MS", cursive, sans-serif;
+
+
+font-family: 'Aclonica', sans-serif;   
+
     font-size: 20px;
     padding: 10px; 
     text-align: left;

@@ -45,13 +45,19 @@ var publicPath = path.resolve(__dirname, 'public');
 app.use(express.static("public"));
 
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/login.html');
+  res.sendFile(__dirname + '/public/registr.html');
 });
  
 //--------POST login
 
 app.post('/login',function(req,res){
   res.sendFile(__dirname + '/public/chat.html');
+});
+
+//--------POST registration
+
+app.post('/registr',function(req,res){
+  res.sendFile(__dirname + '/public/login.html');
 });
 
 app.post('/chatroom', function(req, res) {
