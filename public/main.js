@@ -110,7 +110,7 @@ $(function () {
           //show new message in chat
         $('#messages').append($('<li>')
             .append($('<p id="from">'+'['+new Date()
-                .toLocaleString().split(",")[1]+'] '+msg.uname+": "+'<b>'+msg.message+'</b>'+'<b id="mood">[ '+msg.mood+" ]"+'</b>'+'</p>')));
+                .toLocaleString().split(",")[1]+'] '+msg.uname+": "+'<b>'+msg.message+'</b>'+'<b id="mood"> '+ '<img id="smiley" src="img/'+msg.mood+'.png"></img>'+'</b>'+'</p>')));
           
         //auto-scroll to bottom
         window.scrollTo(0, document.getElementById('chat').scrollHeight);
